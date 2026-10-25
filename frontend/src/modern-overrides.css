@@ -1,0 +1,255 @@
+:root {
+  --ink: #17344c;
+  --muted: #6e7f90;
+  --line: #e0e7ec;
+  --red: #b94743;
+  --amber: #9a6410;
+  --teal: #117b69;
+  --canvas: #f2f5f7;
+}
+
+body {
+  background: #f2f5f7;
+  color: var(--ink);
+}
+
+.sidebar {
+  box-shadow: 3px 0 18px #17344c08;
+}
+
+.brand-mark {
+  background: #e5f2ef;
+  color: #147765;
+}
+
+.nav-link {
+  transition: background-color .16s ease, color .16s ease, transform .16s ease;
+}
+
+.nav-link:hover {
+  transform: translateX(2px);
+}
+
+.nav-link.active {
+  background: #eaf3f6;
+  color: #17627a;
+  box-shadow: inset 3px 0 #188b80;
+}
+
+.page-heading h1 {
+  color: #163650;
+}
+
+.stat-card,
+.panel {
+  border-color: #e0e7ec;
+  box-shadow: 0 2px 7px #17344c0a, 0 1px 2px #17344c08;
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+
+.stat-card:hover,
+.panel:hover {
+  box-shadow: 0 5px 16px #17344c10, 0 1px 3px #17344c08;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+  color: #9a6410;
+  background: #fff2d7;
+}
+
+.stat-card:nth-child(3) .stat-icon {
+  color: #b43e3b;
+  background: #ffe8e5;
+  box-shadow: 0 0 0 4px #fff6f4;
+}
+
+.stat-card:nth-child(4) .stat-icon {
+  color: #a86613;
+  background: #fff1da;
+}
+
+.status {
+  max-width: 180px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.status-red {
+  background: #ffebe8;
+  color: #a93632;
+}
+
+.status-red i {
+  box-shadow: 0 0 0 3px #f8d3ce;
+}
+
+.status-amber {
+  background: #fff3dc;
+  color: #8d5b0b;
+}
+
+.status-amber i {
+  box-shadow: 0 0 0 3px #f4dfb7;
+}
+
+.status-green {
+  background: #e4f5ef;
+  color: #116e5b;
+}
+
+.status-green i {
+  box-shadow: 0 0 0 3px #c7e7dc;
+}
+
+.status-slate {
+  background: #edf1f4;
+  color: #5e7284;
+}
+
+.alert-row {
+  border-radius: 5px;
+  padding: 10px 7px;
+  transition: background-color .15s ease;
+}
+
+.alert-row:hover {
+  background: #fff5f3;
+}
+
+.alert-row > svg {
+  box-sizing: content-box;
+  padding: 6px;
+  border-radius: 7px;
+  background: #ffebe8;
+  color: #b83f39;
+  flex: none;
+}
+
+.alert-row:has(small) > svg {
+  margin-top: 1px;
+}
+
+.stacked-bar i {
+  display: block;
+  height: 100%;
+  min-width: 4px;
+}
+
+.stacked-bar i[title^="No Issues"] {
+  background: #2f9a7a;
+}
+
+.stacked-bar i[title^="Mismatch"],
+.stacked-bar i[title^="Manual"] {
+  background: #d76459;
+}
+
+.stacked-bar i[title^="Pending"] {
+  background: #e2ad4f;
+}
+
+.legend > div {
+  min-height: 17px;
+}
+
+.legend > div > i {
+  background: #8ca5b8;
+  flex: none;
+}
+
+.legend-verified > i {
+  background: #2f9a7a;
+}
+
+.legend-risk > i {
+  background: #d76459;
+}
+
+.legend-review > i {
+  background: #e2ad4f;
+}
+
+.table-wrap table {
+  min-width: 660px;
+}
+
+td:nth-last-child(2) {
+  min-width: 145px;
+}
+
+td .status {
+  width: max-content;
+}
+
+.primary-button {
+  background: #176b75;
+  border-color: #176b75;
+  box-shadow: 0 2px 4px #176b7524;
+}
+
+.primary-button:hover {
+  background: #105963;
+}
+
+.environment {
+  color: #557166;
+}
+
+.environment span,
+.environment i {
+  background: #239777;
+}
+
+.source-note {
+  color: #718391;
+}
+
+@media (max-width: 760px) {
+  .table-wrap table {
+    min-width: 620px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-grid > .right-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid > .panel .table-wrap table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .dashboard-grid > .panel .table-wrap th:nth-child(2),
+  .dashboard-grid > .panel .table-wrap td:nth-child(2),
+  .dashboard-grid > .panel .table-wrap th:nth-child(3),
+  .dashboard-grid > .panel .table-wrap td:nth-child(3) {
+    display: none;
+  }
+
+  .dashboard-grid > .panel .table-wrap th:first-child,
+  .dashboard-grid > .panel .table-wrap td:first-child {
+    width: 48%;
+  }
+
+  .dashboard-grid > .panel .table-wrap td:nth-last-child(2) {
+    min-width: 0;
+    width: 46%;
+  }
+
+  .dashboard-grid > .panel .table-wrap .status {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard-grid > .right-stack {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
